@@ -1,3 +1,7 @@
 #ignore
 .env
 *.ipynb
+# bytecode
+__pycache__/
+*.pyc
+*.pyo
