@@ -15,3 +15,4 @@ def generate_sql_commands(schema,folder_path):
     sql_script_path = f'create_{os.path.basename(folder_path)}.sql'
     with open(sql_script_path, 'w') as f:
       f.write(commands)
+    return sql_script_path
