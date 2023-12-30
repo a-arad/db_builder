@@ -1,18 +1,9 @@
-import os
 import psycopg2
 from psycopg2 import sql
-from dotenv import load_dotenv, find_dotenv
 
-def execute_sql_commands(sql_commands, tables_data):
+def execute_sql_commands(sql_commands, tables_data,db_connection_string):
     '''connect to neon and execute sql commands'''
-    _ = load_dotenv(find_dotenv())  # read in credentials
-
-    conn = psycopg2.connect(
-        dbname=os.environ['DB_NAME'],
-        user=os.environ['DB_USER'],
-        password=os.environ['DB_PASSWORD'],
-        host=os.environ['DB_HOST']
-    )
+    conn = psycopg2.connect(db_connection_string)
 
     try:
         with conn.cursor() as cur:
