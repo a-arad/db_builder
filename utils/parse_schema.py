@@ -18,4 +18,3 @@ def parse_schema(file_path):
         schema[table].append(row)
 
     return schema
-
