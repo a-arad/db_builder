@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users (user_id integer, user_name varchar(50), PRIMARY KEY (user_id));
 \copy users FROM '/Users/arad/repos/synthetic_datasets/vibestream/users.csv' DELIMITER ',' CSV HEADER NULL AS ''
 DROP TABLE IF EXISTS posts;
-CREATE TABLE posts (user_id integer, post_id integer, content varchar(255), PRIMARY KEY (post_id));
+CREATE TABLE posts (user_id integer, post_id integer, content varchar(255), post_date date, PRIMARY KEY (post_id));
 \copy posts FROM '/Users/arad/repos/synthetic_datasets/vibestream/posts.csv' DELIMITER ',' CSV HEADER NULL AS ''
 DROP TABLE IF EXISTS likes;
 CREATE TABLE likes (like_id integer, post_id integer, user_id integer);
