@@ -9,5 +9,5 @@ csv_folder_path = sys.argv[1]
 db_connection_string = sys.argv[2]
 
 schema = parse_schema(f"{csv_folder_path}/schema.csv")
-sql_file_path = generate_sql_commands(schema)
+sql_file_path = generate_sql_commands(schema,csv_folder_path)
 execute_with_psql(sql_file_path,db_connection_string)
