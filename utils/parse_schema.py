@@ -1,7 +1,7 @@
 import pandas as pd
 
 def parse_schema(file_path):
-    # read the csv
+    '''convert table schema to dict - table schema row order matters'''
     schema_df = pd.read_csv(file_path)
 
     # validate columns
